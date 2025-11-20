@@ -1,0 +1,34 @@
+name: "level"
+instances {
+  id: "hero"
+  prototype: "/main/hero/hero.go"
+  position {
+    x: 180.0
+    y: 75.0
+  }
+}
+collection_instances {
+  id: "ground"
+  collection: "/level/ground.collection"
+}
+scale_along_z: 0
+embedded_instances {
+  id: "controller"
+  data: "components {\n"
+  "  id: \"controller\"\n"
+  "  component: \"/level/controller.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"platform_factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/level/platform.go\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"platform_long_factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/level/platform_long.go\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
