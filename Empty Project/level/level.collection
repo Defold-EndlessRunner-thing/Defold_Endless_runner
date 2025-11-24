@@ -12,15 +12,15 @@ instances {
   }
 }
 collection_instances {
-  id: "ground"
-  collection: "/level/ground.collection"
-}
-collection_instances {
   id: "background"
   collection: "/level/background.collection"
   position {
     z: -0.1
   }
+}
+collection_instances {
+  id: "ground"
+  collection: "/level/ground.collection"
 }
 scale_along_z: 0
 embedded_instances {

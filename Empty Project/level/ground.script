@@ -1,5 +1,5 @@
 -- ground.script
-local pieces = { "ground0", "ground1", "ground2", "ground3",
+local pieces = { "ground", "ground1", "ground2", "ground3",
 "ground4", "ground5", "ground6", "ground7", "ground8", "ground9" } -- <1>
 
 function init(self) -- <2>
