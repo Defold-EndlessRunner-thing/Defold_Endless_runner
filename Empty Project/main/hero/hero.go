@@ -49,7 +49,7 @@ embedded_components {
   "    count: 1\n"
   "  }\n"
   "  data: 30.488075\n"
-  "  data: 58.298943\n"
+  "  data: 56.00126\n"
   "  data: 11.0\n"
   "  data: 28.769613\n"
   "}\n"

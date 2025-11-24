@@ -1,0 +1,123 @@
+name: "background"
+scale_along_z: 0
+embedded_instances {
+  id: "background"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"ChatGPT Image Nov 24, 2025, 09_17_45 AM\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/level/level.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 770.0\n"
+  "    y: 420.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  scale3 {
+    x: 0.4
+    y: 0.8
+  }
+}
+embedded_instances {
+  id: "controller_B"
+  data: "components {\n"
+  "  id: \"background\"\n"
+  "  component: \"/level/background.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "background1"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"ChatGPT Image Nov 24, 2025, 09_17_45 AM\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 1536.0\\n"
+  "  y: 1024.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/level/level.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 770.0\n"
+  "    y: 420.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 558.0
+  }
+  scale3 {
+    x: 0.4
+    y: 0.8
+  }
+}
+embedded_instances {
+  id: "background2"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"ChatGPT Image Nov 24, 2025, 09_17_45 AM\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 1536.0\\n"
+  "  y: 1024.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/level/level.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 770.0\n"
+  "    y: 420.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1116.0
+  }
+  scale3 {
+    x: 0.4
+    y: 0.8
+  }
+}
+embedded_instances {
+  id: "background3"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"ChatGPT Image Nov 24, 2025, 09_17_45 AM\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 1536.0\\n"
+  "  y: 1024.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/level/level.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 770.0\n"
+  "    y: 420.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1674.0
+  }
+  scale3 {
+    x: 0.4
+    y: 0.8
+  }
+}
