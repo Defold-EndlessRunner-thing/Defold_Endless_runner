@@ -1,0 +1,29 @@
+local pieces = { "background", "background1", "background2" }
+
+-- scaled width (1536 * 0.35)
+local WIDTH = 538
+-- total span for 3 pieces
+local TOTAL = WIDTH * #pieces   -- 1614
+
+function init(self)
+	self.speed = 360
+end
+
+function update(self, dt)
+	for i, p in ipairs(pieces) do
+		local pos = go.get_position(p)
+
+		if pos.x <= -WIDTH then
+			pos.x = pos.x + TOTAL
+		end
+
+		pos.x = pos.x - self.speed * dt
+		go.set_position(pos, p)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("set_speed") then
+		self.speed = message.speed
+	end
+end
