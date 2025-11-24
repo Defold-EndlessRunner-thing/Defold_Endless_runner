@@ -129,29 +129,6 @@ embedded_components {
   ""
 }
 embedded_components {
-  id: "spike1"
-  type: "sprite"
-  data: "default_animation: \"spikes\"\n"
-  "material: \"/builtins/materials/sprite.material\"\n"
-  "size {\n"
-  "  x: 51.0\n"
-  "  y: 131.0\n"
-  "}\n"
-  "textures {\n"
-  "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/level/level.atlas\"\n"
-  "}\n"
-  ""
-  position {
-    x: 204.0
-    z: -0.1
-  }
-  rotation {
-    y: 0.96983147
-    w: 0.24377629
-  }
-}
-embedded_components {
   id: "spike2"
   type: "sprite"
   data: "default_animation: \"spikes\"\n"
@@ -190,6 +167,36 @@ embedded_components {
   "}\n"
   ""
   position {
+    x: 196.0
+    y: -2.0
+    z: -0.1
+  }
+  rotation {
+    z: 0.999996
+    w: -0.0028278509
+  }
+}
+embedded_components {
+  id: "coin_factory"
+  type: "factory"
+  data: "prototype: \"/level/coin.go\"\n"
+  ""
+}
+embedded_components {
+  id: "spike1"
+  type: "sprite"
+  data: "default_animation: \"spikes\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "size {\n"
+  "  x: 51.0\n"
+  "  y: 131.0\n"
+  "}\n"
+  "textures {\n"
+  "  sampler: \"texture_sampler\"\n"
+  "  texture: \"/level/level.atlas\"\n"
+  "}\n"
+  ""
+  position {
     x: 94.0
     y: -83.0
     z: -0.1
@@ -198,10 +205,4 @@ embedded_components {
     z: 0.70090926
     w: 0.71325046
   }
-}
-embedded_components {
-  id: "coin_factory"
-  type: "factory"
-  data: "prototype: \"/level/coin.go\"\n"
-  ""
 }

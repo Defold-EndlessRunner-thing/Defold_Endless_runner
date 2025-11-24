@@ -4,7 +4,7 @@ instances {
   prototype: "/main/hero/hero.go"
   position {
     x: 180.0
-    y: 75.0
+    y: 281.0
   }
 }
 collection_instances {
@@ -28,6 +28,18 @@ embedded_instances {
   "  id: \"platform_long_factory\"\n"
   "  type: \"factory\"\n"
   "  data: \"prototype: \\\"/level/platform_long.go\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"spikev1_factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/level/spikesv1.go\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"spikev2_factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/level/spikesv2.go\\\"\\n"
   "\"\n"
   "}\n"
   ""

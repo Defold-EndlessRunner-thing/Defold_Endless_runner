@@ -20,7 +20,7 @@ function update(self, dt)
 end
 
 function create_coins(self, params)
-	local spacing = 56
+	local spacing = 60
 	local pos = go.get_position()
 	local x = pos.x - params.coins * (spacing*0.5) - 24
 	for i = 1, params.coins do

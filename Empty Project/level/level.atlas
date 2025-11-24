@@ -13,4 +13,7 @@ images {
 images {
   image: "/level/images/coin.png"
 }
+images {
+  image: "/level/images/spike endlessrunner.png"
+}
 extrude_borders: 2
