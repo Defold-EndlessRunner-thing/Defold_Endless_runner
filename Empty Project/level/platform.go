@@ -22,7 +22,7 @@ embedded_components {
   "    count: 3\n"
   "  }\n"
   "  data: 190.41339\n"
-  "  data: 72.70891\n"
+  "  data: 68.566246\n"
   "  data: 10.0\n"
   "}\n"
   ""
@@ -60,8 +60,8 @@ embedded_components {
 embedded_components {
   id: "dangercollisions"
   type: "collisionobject"
-  data: "type: COLLISION_OBJECT_TYPE_DYNAMIC\n"
-  "mass: 1.0\n"
+  data: "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
+  "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
   "group: \"danger\"\n"
@@ -114,10 +114,10 @@ embedded_components {
   "    count: 3\n"
   "  }\n"
   "  data: 16.321613\n"
-  "  data: 68.64499\n"
+  "  data: 46.63574\n"
   "  data: 10.0\n"
   "  data: 16.321613\n"
-  "  data: 68.64499\n"
+  "  data: 46.63574\n"
   "  data: 10.0\n"
   "  data: 16.321613\n"
   "  data: 68.64499\n"
@@ -143,7 +143,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 198.0
+    x: 204.0
     z: -0.1
   }
   rotation {
