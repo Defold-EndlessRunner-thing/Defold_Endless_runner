@@ -15,7 +15,7 @@ embedded_components {
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
   "    position {\n"
-  "      x: 185.0\n"
+  "      x: -2.0\n"
   "    }\n"
   "    rotation {\n"
   "    }\n"
@@ -38,6 +38,9 @@ embedded_components {
   "  texture: \"/level/level.atlas\"\n"
   "}\n"
   ""
+  position {
+    x: -187.0
+  }
 }
 embedded_components {
   id: "sprite1"
@@ -54,7 +57,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 372.0
+    x: 185.0
   }
 }
 embedded_components {

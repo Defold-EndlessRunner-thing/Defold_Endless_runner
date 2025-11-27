@@ -18,7 +18,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 56.0
+    x: -152.0
     z: -0.1
   }
   scale {
@@ -42,7 +42,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 121.0
+    x: -87.0
     z: -0.1
   }
   scale {
@@ -67,7 +67,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 313.0
+    x: 105.0
     z: -0.1
   }
   scale {
@@ -91,7 +91,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 356.0
+    x: 148.0
     z: -0.1
   }
   scale {
@@ -116,7 +116,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 186.0
+    x: -22.0
     z: -0.1
   }
   scale {
@@ -141,7 +141,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    x: 244.0
+    x: 36.0
     z: -0.1
   }
   scale {
@@ -163,7 +163,7 @@ embedded_components {
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
   "    position {\n"
-  "      x: 202.0\n"
+  "      x: -6.0\n"
   "      y: -11.0\n"
   "    }\n"
   "    rotation {\n"

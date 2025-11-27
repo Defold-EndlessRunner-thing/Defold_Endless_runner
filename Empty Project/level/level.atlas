@@ -16,4 +16,7 @@ images {
 images {
   image: "/level/images/spike endlessrunner.png"
 }
+images {
+  image: "/level/images/ChatGPT Image Nov 24, 2025, 09_17_45 AM.png"
+}
 extrude_borders: 2
