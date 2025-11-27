@@ -1,54 +1,72 @@
 -- controller.script
+
 go.property("speed", 360)
 
-local grid = 460
-local platform_heights = { 100, 200, 350 }
+local GRID_DISTANCE = 460
+local PLATFORM_HEIGHTS = { 150, 200, 350 }
 local coins = 3
 
 function init(self)
 	msg.post("ground/controller#controller", "set_speed", { speed = self.speed })
 	self.gridw = 0
-	self.spawns = {} -- <1>
+	self.spawns = {}
 end
+
 
 function update(self, dt)
 	self.gridw = self.gridw + self.speed * dt
 
-	if self.gridw >= grid then
+	if self.gridw >= GRID_DISTANCE then
 		self.gridw = 0
 
-		-- Maybe spawn a platform at random height
-		if math.random() > 0.2 then
-			local h = platform_heights[math.random(#platform_heights)]
-			local f = "#platform_factory"
-			local coins = coins
-			if math.random() > 0.5 then
-				f = "#platform_long_factory"
-				coins = coins * 2
-			end
+		if math.random() > 0.3 then
 
-			local p = factory.create(f, vmath.vector3(1600, h, 0), nil, {}, 0.6)
-			msg.post(p, "set_speed", { speed = self.speed })
-			msg.post(p, "create_coins", { coins = coins })
-			table.insert(self.spawns, p)
+			local height = PLATFORM_HEIGHTS[math.random(#PLATFORM_HEIGHTS)]
+			local factory_id = "#platform_factory"
+			local coins = coins
+
+				-- otherwise, 50% chance long platform
+			if math.random() > 0.7 then
+				factory_id = "#platform_long_factory"
+				coins = coins * 2
+			elseif math.random() < 0.7 then
+				if math.random() > 0.5 then
+					factory_id = "#spikev1_factory"
+					height = 80
+				end
+			end	
+
+			local pos = vmath.vector3(1600, height, 0)
+			local platform = factory.create(factory_id, pos, nil, {}, 0.6)
+
+			msg.post(platform, "set_speed", { speed = self.speed })
+			msg.post(platform, "create_coins", { coins = coins })
+
+			table.insert(self.spawns, platform)
 		end
 	end
 end
 
+
 function on_message(self, message_id, message, sender)
-	if message_id == hash("reset") then -- <2>
-		-- Tell the hero to reset.
+
+	if message_id == hash("reset") then
+
 		msg.post("hero#hero", "reset")
-		-- Delete all platforms
-		for i,p in ipairs(self.spawns) do
+
+		for _, p in ipairs(self.spawns) do
 			go.delete(p)
 		end
+
 		self.spawns = {}
-	elseif message_id == hash("delete_spawn") then -- <3>
-		for i,p in ipairs(self.spawns) do
+
+	elseif message_id == hash("delete_spawn") then
+
+		for i, p in ipairs(self.spawns) do
 			if p == message.id then
-				table.remove(self.spawns, i)
 				go.delete(p)
+				table.remove(self.spawns, i)
+				break
 			end
 		end
 	end
