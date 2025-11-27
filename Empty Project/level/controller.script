@@ -1,94 +1,73 @@
 -- controller.script
 
--- Speed that the world scrolls horizontally
 go.property("speed", 360)
 
--- Distance the player must "travel" before we consider spawning a new platform
-local grid = 460
-
--- Possible platform heights on the Y-axis
-local platform_heights = { 100, 200, 350 }
-
--- Base number of coins placed on a platform
+local GRID_DISTANCE = 460
+local PLATFORM_HEIGHTS = { 150, 200, 350 }
 local coins = 3
 
 function init(self)
-	-- Tell the ground controller how fast to scroll
 	msg.post("ground/controller#controller", "set_speed", { speed = self.speed })
-
-	-- Tracks how far the world has scrolled since last spawn
 	self.gridw = 0
-
-	-- Table that stores references to all platform instances created
-	self.spawns = {}  -- <1>
+	self.spawns = {}
 end
+
 
 function update(self, dt)
-	-- Move the "grid counter" by world scrolling speed
 	self.gridw = self.gridw + self.speed * dt
 
-	-- When we pass the grid threshold, spawn something new
-	if self.gridw >= grid then
-		-- Reset distance counter
+	if self.gridw >= GRID_DISTANCE then
 		self.gridw = 0
-		-------------------------------------------------------------------
-		-- PLATFORM SPAWNING
-		-------------------------------------------------------------------
-		if math.random() > 0.2 then
-			-- Pick a random Y height from the list
-			local h = platform_heights[math.random(#platform_heights)]
-			-- Default platform factory
-			local f = "#platform_factory"
-			-- Default coin amount
+
+		if math.random() > 0.3 then
+
+			local height = PLATFORM_HEIGHTS[math.random(#PLATFORM_HEIGHTS)]
+			local factory_id = "#platform_factory"
 			local coins = coins
-			if math.random() > 0.4 then
-				f = "#platform_long_factory"
-				coins = coins * 2   -- long platform = double coins
-			end
-			-- Create the platform at the far right of the screen
-			local p = factory.create(
-			f,
-			vmath.vector3(1600, h, 0),   -- spawn position
-			nil,
-			{},                           -- no properties table
-			0.6                           -- scale
-		)
-		-- Tell the platform how fast the world moves
-		msg.post(p, "set_speed", { speed = self.speed })
-		-- Tell the platform how many coins to create
-		msg.post(p, "create_coins", { coins = coins })
-		-- Add the platform to the tracking list
-		table.insert(self.spawns, p)
+
+				-- otherwise, 50% chance long platform
+			if math.random() > 0.7 then
+				factory_id = "#platform_long_factory"
+				coins = coins * 2
+			elseif math.random() < 0.7 then
+				if math.random() > 0.5 then
+					factory_id = "#spikev1_factory"
+					height = 80
+				end
+			end	
+
+			local pos = vmath.vector3(1600, height, 0)
+			local platform = factory.create(factory_id, pos, nil, {}, 0.6)
+
+			msg.post(platform, "set_speed", { speed = self.speed })
+			msg.post(platform, "create_coins", { coins = coins })
+
+			table.insert(self.spawns, platform)
+		end
 	end
-end
 end
 
 
 function on_message(self, message_id, message, sender)
 
--- RESET MESSAGE -------------------------------------------------------
-if message_id == hash("reset") then    -- <2>
-	-- Tell hero to reset its position/state
-	msg.post("hero#hero", "reset")
-	-- Delete every spawned platform so the world resets cleanly
-	for i,p in ipairs(self.spawns) do
-		go.delete(p)
-	end
-	-- Empty the spawn list
-	self.spawns = {}
+	if message_id == hash("reset") then
 
-	-- DELETE ONE SPECIFIC SPAWN ------------------------------------------
-elseif message_id == hash("delete_spawn") then    -- <3>
+		msg.post("hero#hero", "reset")
 
-	-- Loop through stored spawns and find the one matching message.id
-	for i,p in ipairs(self.spawns) do
-		if p == message.id then
-			-- Remove it from the list
-			table.remove(self.spawns, i)
-
-			-- Delete the game object
+		for _, p in ipairs(self.spawns) do
 			go.delete(p)
 		end
+
+		self.spawns = {}
+
+	elseif message_id == hash("delete_spawn") then
+
+		for i, p in ipairs(self.spawns) do
+			if p == message.id then
+				go.delete(p)
+				table.remove(self.spawns, i)
+				break
+			end
+		end
 	end
-end
 end

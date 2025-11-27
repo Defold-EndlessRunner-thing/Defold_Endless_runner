@@ -11,18 +11,19 @@ embedded_components {
   "  x: 350.0\n"
   "  y: 525.0\n"
   "}\n"
+  "size_mode: SIZE_MODE_MANUAL\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/level/level.atlas\"\n"
   "}\n"
   ""
   position {
-    x: 40.0
+    x: 56.0
     z: -0.1
   }
   scale {
-    x: 0.102631
-    y: 0.050779
+    x: 0.516302
+    y: 0.336856
   }
 }
 embedded_components {
@@ -34,18 +35,19 @@ embedded_components {
   "  x: 350.0\n"
   "  y: 525.0\n"
   "}\n"
+  "size_mode: SIZE_MODE_MANUAL\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/level/level.atlas\"\n"
   "}\n"
   ""
   position {
-    x: 31.0
+    x: 121.0
     z: -0.1
   }
   scale {
-    x: -0.114281
-    y: 0.051014
+    x: -0.838633
+    y: 0.325723
     z: 0.96
   }
 }
@@ -58,18 +60,19 @@ embedded_components {
   "  x: 350.0\n"
   "  y: 525.0\n"
   "}\n"
+  "size_mode: SIZE_MODE_MANUAL\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/level/level.atlas\"\n"
   "}\n"
   ""
   position {
-    x: 45.0
+    x: 313.0
     z: -0.1
   }
   scale {
-    x: -0.097846
-    y: 0.050779
+    x: 0.61831
+    y: 0.336856
   }
 }
 embedded_components {
@@ -81,18 +84,19 @@ embedded_components {
   "  x: 350.0\n"
   "  y: 525.0\n"
   "}\n"
+  "size_mode: SIZE_MODE_MANUAL\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/level/level.atlas\"\n"
   "}\n"
   ""
   position {
-    x: 53.0
+    x: 356.0
     z: -0.1
   }
   scale {
-    x: 0.108953
-    y: 0.051014
+    x: -0.616805
+    y: 0.336856
     z: 0.96
   }
 }
@@ -105,18 +109,19 @@ embedded_components {
   "  x: 350.0\n"
   "  y: 525.0\n"
   "}\n"
+  "size_mode: SIZE_MODE_MANUAL\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/level/level.atlas\"\n"
   "}\n"
   ""
   position {
-    x: 62.0
+    x: 186.0
     z: -0.1
   }
   scale {
-    x: 0.095685
-    y: 0.051014
+    x: 0.61831
+    y: 0.336856
     z: 0.96
   }
 }
@@ -129,43 +134,45 @@ embedded_components {
   "  x: 350.0\n"
   "  y: 525.0\n"
   "}\n"
+  "size_mode: SIZE_MODE_MANUAL\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/level/level.atlas\"\n"
   "}\n"
   ""
   position {
-    x: 20.0
+    x: 244.0
     z: -0.1
   }
   scale {
-    x: -0.081413
-    y: 0.051014
+    x: 0.61831
+    y: 0.336856
     z: 0.96
   }
 }
 embedded_components {
   id: "collisionobject"
   type: "collisionobject"
-  data: "type: COLLISION_OBJECT_TYPE_DYNAMIC\n"
-  "mass: 1.0\n"
+  data: "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
+  "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"default\"\n"
-  "mask: \"default\"\n"
+  "group: \"danger\"\n"
+  "mask: \"hero\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
   "    position {\n"
-  "      x: 41.0\n"
+  "      x: 202.0\n"
+  "      y: -11.0\n"
   "    }\n"
   "    rotation {\n"
   "    }\n"
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 31.802916\n"
-  "  data: 6.1035476\n"
+  "  data: 170.9768\n"
+  "  data: 63.679367\n"
   "  data: 10.0\n"
   "}\n"
   ""
