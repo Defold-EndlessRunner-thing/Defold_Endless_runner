@@ -1,4 +1,4 @@
-# Endless Runner Variant 🏃‍♂️
+# Endless Runner Variant
 
 A fast-paced endless runner game built with [Defold](https://defold.com/).
 
