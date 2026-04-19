@@ -1,6 +1,6 @@
 # Endless Runner Variant
 
-A fast-paced endless runner game school project built with [Defold](https://defold.com/). for the duration of 2 weeks
+A fast-paced endless runner game school project built with [Defold](https://defold.com/), made within 2 weeks.
 
 ## Overview
 
