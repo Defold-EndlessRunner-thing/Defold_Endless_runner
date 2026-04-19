@@ -24,6 +24,3 @@ This project is a variant implementation of a classic endless runner game, mostl
 1. Clone this repository
 2. Open the project in Defold
 3. Build and run the game
-
-```bash
-git clone https://github.com/Defold-EndlessRunner-thing/Endless_runner_variant.git
